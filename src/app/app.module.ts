@@ -16,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatGridListModule} from '@angular/material/grid-list';
+import {MatButtonModule} from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -29,13 +30,17 @@ import {MatGridListModule} from '@angular/material/grid-list';
     // CLI adds AppRoutingModule to the AppModule's imports array
     AppRoutingModule,
     StoreModule.forRoot({ count: counterReducer }),
-    // import material
+
+    // =============== import material ===============
+    // ===============================================
+    
     MatSlideToggleModule,
     MatToolbarModule,
     MatInputModule,
     MatSelectModule,
     MatFormFieldModule,
-    MatGridListModule
+    MatGridListModule,
+    MatButtonModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA

@@ -1,3 +1,7 @@
 .second-component {
   padding: 100px;
 }
+
+.list-selected button {
+  margin-right: 15px;
+}
