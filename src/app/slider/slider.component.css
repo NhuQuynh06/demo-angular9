@@ -1,0 +1,6 @@
+.component {
+  padding: 100px;
+}
+mat-slider {
+  width: 300px;
+}

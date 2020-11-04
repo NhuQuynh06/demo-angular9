@@ -17,12 +17,15 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from "@angular/material/form-field";
 import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
+import { SliderComponent } from './slider/slider.component';
+import {MatSliderModule} from '@angular/material/slider';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
-    SecondComponent
+    SecondComponent,
+    SliderComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import {MatButtonModule} from '@angular/material/button';
     MatSelectModule,
     MatFormFieldModule,
     MatGridListModule,
-    MatButtonModule
+    MatButtonModule,
+    MatSliderModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
