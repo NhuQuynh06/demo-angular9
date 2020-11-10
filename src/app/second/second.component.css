@@ -1,7 +1,15 @@
-.component {
+.conponent {
   padding: 100px;
 }
 
 .list-selected button {
   margin-right: 15px;
+}
+
+.wrapper {
+  display: flex;
+  align-items: center;
+}
+.wrapper p {
+  margin-right: 40px;
 }

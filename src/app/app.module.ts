@@ -8,6 +8,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FirstComponent } from './first/first.component';
 import { SecondComponent } from './second/second.component';
+import { FormsModule } from '@angular/forms';
 
 // material
 import {MatSlideToggleModule} from '@angular/material/slide-toggle';
@@ -19,13 +20,15 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatButtonModule} from '@angular/material/button';
 import { SliderComponent } from './slider/slider.component';
 import {MatSliderModule} from '@angular/material/slider';
+import { ParentComponent } from './parent/parent.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FirstComponent,
     SecondComponent,
-    SliderComponent
+    SliderComponent,
+    ParentComponent,
   ],
   imports: [
     BrowserModule,
@@ -33,6 +36,7 @@ import {MatSliderModule} from '@angular/material/slider';
     // CLI adds AppRoutingModule to the AppModule's imports array
     AppRoutingModule,
     StoreModule.forRoot({ count: counterReducer }),
+    FormsModule,
 
     // =============== import material ===============
     // ===============================================

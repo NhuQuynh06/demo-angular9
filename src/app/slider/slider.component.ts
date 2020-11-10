@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output,EventEmitter } from '@angular/core';
+import { MatSliderChange } from '@angular/material/slider';
 
 @Component({
   selector: 'app-slider',
@@ -6,13 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./slider.component.css']
 })
 export class SliderComponent implements OnInit {
-  valueSlider = [
-    { min: '1', max: '100' }
-  ]
+  //  output
+  @Output() sendData = new EventEmitter;
 
+  min = 10;
+  max = 100;
+  valueSlider ;
   constructor() { }
 
   ngOnInit(): void {
+    
   }
 
+  formatLabel(value: any) {
+    return value
+  }
+  handleChangeSlider(event: MatSliderChange) {
+    this.valueSlider = event.value;
+  }
+  
+  // throws to parent
+  throws(){
+    this.sendData.emit(this.valueSlider);
+  }
 }

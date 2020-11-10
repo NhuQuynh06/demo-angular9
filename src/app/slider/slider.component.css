@@ -1,6 +1,7 @@
-.component {
-  padding: 100px;
-}
+
 mat-slider {
   width: 300px;
+}
+.wrapper input {
+  width: 30px;
 }

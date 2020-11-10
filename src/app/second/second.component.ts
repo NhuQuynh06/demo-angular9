@@ -1,5 +1,5 @@
 import { TagContentType } from '@angular/compiler';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-second',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class SecondComponent implements OnInit {
+  //  output
+  @Output() send = new EventEmitter;
 
   //  init value
   foods = [
@@ -34,11 +36,15 @@ export class SecondComponent implements OnInit {
 
   deteItemListUnique(item) {
     this.listUnique = this.listUnique.filter(a => !item.includes(a));
-    console.log(this.listUnique)
   }
 
   unique(arr) {
     return Array.from(new Set(arr))
+  }
+
+  // throws to parent
+  throws(){
+    this.send.emit(this.listUnique);
   }
 
 }

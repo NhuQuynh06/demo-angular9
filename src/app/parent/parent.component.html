@@ -1,0 +1,9 @@
+
+<section class="parent-component component">
+  <p> parent component</p>
+  <p>{{value}}</p>
+  <p>{{valueSlider}}</p>
+  <app-second (send)="some($event)"></app-second>
+  <app-slider (sendData)="toSlider($event)"></app-slider>  
+
+</section>

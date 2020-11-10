@@ -1,16 +1,19 @@
-<section class="second-component conponent">
+<section class="second-component">
   <form>
-    <mat-form-field appearance="fill">
-      <mat-label>Favorite food</mat-label>
-      <mat-select [(value)]="selectedValue" name="food">
-        <mat-option *ngFor="let food of foods" [value]="food.viewValue" (click)="updateSelected()">
-          {{food.viewValue}}
-        </mat-option>
-      </mat-select>
-    </mat-form-field>
+    <div class="wrapper">
+      <p> name </p>
+      <mat-form-field appearance="fill">
+        <mat-label>Favorite food</mat-label>
+        <mat-select [(value)]="selectedValue" name="food">
+          <mat-option *ngFor="let food of foods" [value]="food.viewValue" (click)="updateSelected()">
+            {{food.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
     <div class="list-selected">
       <p *ngFor="let itemListUniquem of listUnique" (click)="deteItemListUnique(itemListUniquem)">{{itemListUniquem}}</p>
-
     </div>
     </form>
+    <button (click)="throws()">send</button>
 </section>
