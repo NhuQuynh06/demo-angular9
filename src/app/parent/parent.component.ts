@@ -8,20 +8,38 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ParentComponent implements OnInit {
-  value = '';
-  valueSlider : number;
-  constructor() { }
   
+  // ========================================
+  // ============= init value ===============
+  // ========================================
+  value = '';
+  valueSlider: number;
+  currentName = 'Domain/ Website';
+  foods = [
+    { value: '0', viewValue: 'mot' },
+    { value: '1', viewValue: 'hai' },
+    { value: '2', viewValue: 'ba' },
+    { value: '3', viewValue: 'bon' },
+    { value: '4', viewValue: 'nam' },
+  ];
+
+  constructor() { }
+
   ngOnInit(): void {
-    
+
   }
-  some(e){
+
+  // ========================================
+  // ========= function general =============
+  // ========================================
+
+  some(e) {
     this.value = e;
   }
-  
+
   toSlider(e) {
     this.valueSlider = e
   }
-  
+
 
 }
