@@ -22,6 +22,7 @@ import { SliderComponent } from './slider/slider.component';
 import {MatSliderModule} from '@angular/material/slider';
 import { ParentComponent } from './parent/parent.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,

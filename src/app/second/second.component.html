@@ -1,19 +1,22 @@
 <section class="second-component">
-  <form>
-    <div class="wrapper">
-      <p> name </p>
-      <mat-form-field appearance="fill">
-        <mat-label>Favorite food</mat-label>
-        <mat-select [(value)]="selectedValue" name="food">
-          <mat-option *ngFor="let food of foods" [value]="food.viewValue" (click)="updateSelected()">
-            {{food.viewValue}}
-          </mat-option>
-        </mat-select>
-      </mat-form-field>
-    </div>
-    <div class="list-selected">
-      <p *ngFor="let itemListUniquem of listUnique" (click)="deteItemListUnique(itemListUniquem)">{{itemListUniquem}}</p>
-    </div>
-    </form>
+  <div class="second-component__dropdown">
+    <p> name </p>
+    <mat-form-field appearance="fill">
+      <mat-label>Favorite food</mat-label>
+      <mat-select name="food" (selectionChange)='handleChangeSelectMultiple($event)' multiple (closed)="method()">
+        <mat-option *ngFor="let food of foods" [value]="food.viewValue">
+          {{food.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+  <div class="second-component__list-selected">
+    <button type="button" class="close" aria-label="Close" *ngFor="let itemListUniquem of arrayLatest"
+      (click)="deteItemListUnique(itemListUniquem)">
+      <span aria-hidden="true">&times; {{itemListUniquem}} </span>
+    </button>
+  </div>
+  <div class="second-component__button">
     <button (click)="throws()">send</button>
+  </div>
 </section>

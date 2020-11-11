@@ -1,15 +1,12 @@
-.conponent {
-  padding: 100px;
-}
 
-.list-selected button {
+.second-component__button button {
   margin-right: 15px;
 }
 
-.wrapper {
+.second-component__dropdown {
   display: flex;
   align-items: center;
 }
-.wrapper p {
-  margin-right: 40px;
+.second-component__list-selected button {
+  margin-right: 20px;
 }

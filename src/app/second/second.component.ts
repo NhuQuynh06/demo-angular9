@@ -1,5 +1,6 @@
 import { TagContentType } from '@angular/compiler';
 import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { MatSelectChange } from '@angular/material/select';
 
 @Component({
   selector: 'app-second',
@@ -19,32 +20,36 @@ export class SecondComponent implements OnInit {
     { value: '3', viewValue: 'bon' },
     { value: '4', viewValue: 'nam' },
   ];
-  selectedValue: '';
-  listSelected = [];
-  listUnique = [];
 
+  selectArray = [];
+  arrayLatest = [];
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  updateSelected() {
-    this.listSelected.push(this.selectedValue);
-    this.listUnique = this.unique(this.listSelected);
-  }
-
   deteItemListUnique(item) {
-    this.listUnique = this.listUnique.filter(a => !item.includes(a));
+    this.arrayLatest = this.arrayLatest.filter(a => !item.includes(a));
   }
 
-  unique(arr) {
-    return Array.from(new Set(arr))
+  // unique(arr) {
+  //   return Array.from(new Set(arr))
+  // }
+
+  
+  handleChangeSelectMultiple(event: MatSelectChange) {
+    this.selectArray.push(event.value);
+  }
+  
+  method() {
+    this.arrayLatest = this.selectArray[this.selectArray.length - 1]
   }
 
   // throws to parent
   throws(){
-    this.send.emit(this.listUnique);
+    this.send.emit(this.arrayLatest);
   }
+
 
 }
