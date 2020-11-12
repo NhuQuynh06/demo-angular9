@@ -1,8 +1,8 @@
 <section class="parent-component component">
-  <p> parent component</p>
-  <p>{{value}}</p>
-  <p>{{valueSlider}}</p>
-  <app-second (send)="some($event)" [nameDropdown]="currentName" [arrayDropdown]="foods">
+  <p> PARENT COMPONENT</p>
+  <p> {{ value }}</p>
+  <p>{{ valueSlider }}</p>
+  <app-second (send)="some($event)" [nameDropdown]="currentName" [arrayDropdown]="toppingList">
     
   </app-second>
   <app-slider (sendData)="toSlider($event)"></app-slider>

@@ -8,19 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 
 export class ParentComponent implements OnInit {
-  
+
   // ========================================
   // ============= init value ===============
   // ========================================
   value = '';
   valueSlider: number;
   currentName = 'Domain/ Website';
-  foods = [
-    { value: '0', viewValue: 'mot' },
-    { value: '1', viewValue: 'hai' },
-    { value: '2', viewValue: 'ba' },
-    { value: '3', viewValue: 'bon' },
-    { value: '4', viewValue: 'nam' },
+  toppingList: string[] = [
+    "Extra cheese",
+    "Mushroom",
+    "Onion",
+    "Pepperoni",
+    "Sausage",
+    "Tomato"
   ];
 
   constructor() { }
@@ -34,7 +35,12 @@ export class ParentComponent implements OnInit {
   // ========================================
 
   some(e) {
-    this.value = e;
+    // debugger;
+    // console.log('log e', e);
+    // Reference - deepcopy
+    this.value = JSON.parse(JSON.stringify(e));
+    // console.log('log value', this.value)
+    // debugger;
   }
 
   toSlider(e) {

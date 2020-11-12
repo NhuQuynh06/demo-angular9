@@ -22,12 +22,11 @@ export class SliderComponent implements OnInit {
   formatLabel(value: any) {
     return value
   }
+
   handleChangeSlider(event: MatSliderChange) {
     this.valueSlider = event.value;
-  }
-  
-  // throws to parent
-  throws(){
+    // throws to parent
     this.sendData.emit(this.valueSlider);
   }
+  
 }

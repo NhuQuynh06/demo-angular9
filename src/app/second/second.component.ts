@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
-import { MatSelectChange } from '@angular/material/select';
 import { FormControl } from '@angular/forms';
 
 
@@ -10,25 +9,34 @@ import { FormControl } from '@angular/forms';
 })
 
 export class SecondComponent implements OnInit {
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  // ========================================
+  // =========== transfer data ==============
+  // ========================================
+
+  @Output() send = new EventEmitter;
+
+  @Input() nameDropdown: string;
+  @Input() arrayDropdown: [];
+
+  // ========================================
+  // ========= function general =============
+  // ========================================
+
   toppingsControl = new FormControl([]);
-  toppingList: string[] = [
-    "Extra cheese",
-    "Mushroom",
-    "Onion",
-    "Pepperoni",
-    "Sausage",
-    "Tomato"
-  ];
 
   onToppingRemoved(topping: string) {
     const toppings = this.toppingsControl.value as string[];
     this.removeFirst(toppings, topping);
+    this.toppingsControl.setValue([""]);
     this.toppingsControl.setValue(toppings); // To trigger change detection
+    this.send.emit(toppings);
+
   }
 
   private removeFirst<T>(array: T[], toRemove: T): void {
@@ -37,5 +45,14 @@ export class SecondComponent implements OnInit {
       array.splice(index, 1);
     }
   }
+
+  closePanel() {
+    this.sendData();
+  }
+
+  sendData() {
+    this.send.emit(this.toppingsControl.value);
+  }
+
 
 }
