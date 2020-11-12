@@ -1,6 +1,7 @@
-import { TagContentType } from '@angular/compiler';
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { MatSelectChange } from '@angular/material/select';
+import { FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-second',
@@ -9,49 +10,32 @@ import { MatSelectChange } from '@angular/material/select';
 })
 
 export class SecondComponent implements OnInit {
-
-  // ========================================
-  // =========== transfer data ==============
-  // ========================================
-
-  @Output() send = new EventEmitter;
-
-  @Input() nameDropdown: string;
-  @Input() arrayDropdown: [];
-
-  // ========================================
-  // ============= init value ===============
-  // ========================================
-
-
-  selectArray = [];
-  arrayLatest = [];
-
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  // ========================================
-  // ========= function general =============
-  // ========================================
-  
-  deteItemListUnique(item) {
-    this.arrayLatest = this.arrayLatest.filter(a => !item.includes(a));
+  toppingsControl = new FormControl([]);
+  toppingList: string[] = [
+    "Extra cheese",
+    "Mushroom",
+    "Onion",
+    "Pepperoni",
+    "Sausage",
+    "Tomato"
+  ];
+
+  onToppingRemoved(topping: string) {
+    const toppings = this.toppingsControl.value as string[];
+    this.removeFirst(toppings, topping);
+    this.toppingsControl.setValue(toppings); // To trigger change detection
   }
 
-  handleChangeSelectMultiple(event: MatSelectChange) {
-    this.selectArray.push(event.value);
+  private removeFirst<T>(array: T[], toRemove: T): void {
+    const index = array.indexOf(toRemove);
+    if (index !== -1) {
+      array.splice(index, 1);
+    }
   }
-
-  method() {
-    this.arrayLatest = this.selectArray[this.selectArray.length - 1]
-  }
-
-  // throws to parent
-  throws() {
-    this.send.emit(this.arrayLatest);
-  }
-
 
 }
