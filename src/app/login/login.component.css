@@ -1,0 +1,27 @@
+.login-component {
+  padding: 100px;
+}
+mat-form-field,
+button {
+  width: 300px;
+}
+.login-component__wrapper {
+  text-align: center;
+  padding: 50px;
+  margin: 0 auto;
+  border: 1px solid black;
+  border-radius: 4px;
+  max-width: 500px;
+}
+
+mat-card {
+  max-width: 400px;
+  margin: 2em auto;
+  text-align: center;
+}
+.signin-content {
+  padding: 60px 1rem;
+}
+.full-width-input {
+  width: 100%;
+}
