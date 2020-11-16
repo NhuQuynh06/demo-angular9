@@ -7,6 +7,7 @@ import { ParentComponent } from './parent/parent.component';
 import { SecondComponent } from './second/second.component';
 import { SliderComponent } from './slider/slider.component'
 import { TableComponent } from './table/table.component';
+import { StepperComponent } from './stepper/stepper.component';
 
 const routes: Routes = [
   { path: 'login-component', component: LoginComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'second-component', component: SecondComponent },
   { path: 'slider-component', component: SliderComponent },
   { path: 'parent-component', component: ParentComponent },
+  { path: 'stepper-component', component: StepperComponent },
 ];
 
 @NgModule({

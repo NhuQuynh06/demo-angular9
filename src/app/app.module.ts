@@ -27,9 +27,12 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatIconModule } from '@angular/material/icon';
 import { MatChipsModule } from '@angular/material/chips';
 import {MatTableModule} from '@angular/material/table';
+import {MatStepperModule} from '@angular/material/stepper';
+import {MatCheckboxModule} from '@angular/material/checkbox';
 // service
 
 import { HttpClientModule } from '@angular/common/http';
+import { StepperComponent } from './stepper/stepper.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,7 @@ import { HttpClientModule } from '@angular/common/http';
     ParentComponent,
     LoginComponent,
     TableComponent,
+    StepperComponent,
   ],
   imports: [
     BrowserModule,
@@ -65,6 +69,8 @@ import { HttpClientModule } from '@angular/common/http';
     MatChipsModule,
     MatTableModule,
     HttpClientModule,
+    MatStepperModule,
+    MatCheckboxModule
   ],
   schemas: [
     CUSTOM_ELEMENTS_SCHEMA
